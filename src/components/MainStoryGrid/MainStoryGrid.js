@@ -23,7 +23,9 @@ const MainStoryGrid = () => {
       <SecondaryStorySection>
         <StoryList>
           {SECONDARY_STORIES.map((story, index) => (
-            <SecondaryStory key={story.id} {...story} />
+            <StoryWrapper key={story.id}>
+              <SecondaryStory {...story} />
+            </StoryWrapper>
           ))}
         </StoryList>
       </SecondaryStorySection>
@@ -32,7 +34,9 @@ const MainStoryGrid = () => {
         <SectionTitle>Opinion</SectionTitle>
         <StoryList>
           {OPINION_STORIES.map((story, index) => (
-            <OpinionStory key={story.id} {...story} />
+            <StoryWrapper key={story.id}>
+            <OpinionStory {...story} />
+            </StoryWrapper>
           ))}
         </StoryList>
       </OpinionSection>
@@ -43,6 +47,14 @@ const MainStoryGrid = () => {
     </Wrapper>
   );
 };
+
+const StoryWrapper = styled.article`
+  &:not(:last-of-type) {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px var(--color-gray-300);
+  }
+`;
 
 const Wrapper = styled.div`
   display: grid;
