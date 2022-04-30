@@ -49,7 +49,7 @@ const Abstract = styled.p`
   -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.tabletOnly} {
     -webkit-line-clamp: 16;
   }
 `;
